@@ -1,0 +1,2 @@
+cd "/Users/elvissanchez/Documents/Maestria-Casa Grande/S3-Proyecto final integrador"
+.venv/bin/streamlit run app.py
