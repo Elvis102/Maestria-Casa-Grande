@@ -8,11 +8,15 @@
 import warnings
 warnings.filterwarnings("ignore")
 
+from pathlib import Path
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+
+DEFAULT_CSV = Path(__file__).parent / "Student_performance_data_.csv"
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -109,7 +113,7 @@ def load_data(file=None):
     if file is not None:
         df = pd.read_csv(file)
     else:
-        df = pd.read_csv("Student_performance_data_.csv")
+        df = pd.read_csv(DEFAULT_CSV)
     return df
 
 
@@ -186,9 +190,16 @@ with st.sidebar:
         label_visibility="collapsed"
     )
     st.divider()
-    st.markdown("**Cargar dataset**")
-    uploaded = st.file_uploader("CSV de Kaggle", type=["csv"],
-                                label_visibility="collapsed")
+    st.markdown("**Dataset**")
+    uploaded = st.file_uploader(
+        "Cargar CSV personalizado (opcional)",
+        type=["csv"],
+        help="Si no cargas ningún archivo, se usa el dataset de Kaggle incluido por defecto."
+    )
+    if uploaded is None:
+        st.success("✅ Dataset pre-cargado  \n`Student_performance_data_.csv`")
+    else:
+        st.info(f"📂 Usando: `{uploaded.name}`")
     st.divider()
     st.caption(
         "**Elvis M. Sánchez Rogel**  \n"
