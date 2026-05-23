@@ -186,7 +186,7 @@ La app abre en `http://localhost:8501`
 ### Opción C — Streamlit Cloud (acceso público)
 
 La aplicación está desplegada en:  
-**[maestria-casa-grande.streamlit.app](https://maestria-casa-grande-qclmmzcb25hmugt2o77pou.streamlit.app/)**
+**[maestria-casa-grande.streamlit.app](https://maestria-casa-grande-9hg2hodempqzjkrmcdctjn.streamlit.app/)**
 
 ---
 
