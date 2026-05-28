@@ -801,7 +801,7 @@ elif seccion == "📋 Conclusiones":
            lo que confirma la utilidad de los métodos de ensemble para este tipo de
            problema educativo.
 
-        6. **El 67.6% de los estudiantes** del dataset obtiene calificación D o F,
+        6. **El 67.9% de los estudiantes** del dataset obtiene calificación D o F,
            lo que evidencia una problemática académica sistémica que justifica el
            uso de modelos predictivos para intervención temprana.
         """)
